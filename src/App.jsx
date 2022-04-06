@@ -1,18 +1,21 @@
 import { ColoredMessage } from "./components/ColoredMessage";
+import { CssModules } from "./components/CssModules";
+import { StyledJsx } from "./components/StyledJsx";
+import { StyledComponents } from "./components/StyledComponents";
+import { Emotion } from "./Emotion";
 import { useState } from "react";
 import { useEffect } from "react";
 
 export const App = () => {
 
-    useEffect(() => {
-        alert();
-    }, [num]);
-    
-
     const [num, setNum] = useState(0);
     const onClickButton = () => {
         setNum(num + 1);
     }
+
+    useEffect(() => {
+        alert();
+    }, [num]);
 
     return (
         <>
@@ -21,6 +24,10 @@ export const App = () => {
             <ColoredMessage color="pink">元気です！</ColoredMessage>
             <button onClick={onClickButton}>ボタン</button>
             <p>{ num }</p>
+            <CssModules />
+            <StyledJsx />
+            <StyledComponents />
+            <Emotion />
         </>
     )
 }
